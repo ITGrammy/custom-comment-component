@@ -9,15 +9,31 @@ class Comment extends HTMLElement {
   // This a class we are overring the ccb method with my own HTML code
   connectedCallback() {
     //below is the section for the component
-    this.innerHTML = `<section class="comment">
+    const shadow = this.attachShadow({ mode: "open" });
+    //ShadowDom encapsulates the rule created so they don't leak out or impact other parts of the system
+
+    shadow.innerHTML = `<section class="comment">
     
     
       <h2>${this.getAttribute("name")}</h2>
-      <img src=""
+      
       <h3>${this.getAttribute("email")}</h3>
       <h4>${this.getAttribute("comment")}</h4>
+      <h5>${this.getAttribute("timestamp")}</5>
+      
       <!--<p>You can do what you are capable of believing you can do!!</p>-->
-    </section>`;
+    </section>
+    <style>
+    .comment {
+
+      border: solid black 1px;
+      padding: 20px;
+      margin: 20px;
+      background-color: rgb(255, 127, 176);
+    
+    }
+    </style>
+    `;
   }
 }
 

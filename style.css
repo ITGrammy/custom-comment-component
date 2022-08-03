@@ -8,14 +8,7 @@
   background-color: blueviolet;
 }
 
-.comment {
 
-  border: solid black 1px;
-  padding: 20px;
-  margin: 20px;
-  background-color: rgb(255, 127, 176);
-
-}
 
 label {
   display: block;
