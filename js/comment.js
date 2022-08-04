@@ -1,7 +1,7 @@
 // creating a new class that controls what our new element will look like
 // This means we include what attributes it needs and how to present them using HTML
 // We can also include a style declaration or style tag with rules this is totally optional
-class Comment extends HTMLElement {
+export default class Comment extends HTMLElement {
   constructor() {
     super();
   }

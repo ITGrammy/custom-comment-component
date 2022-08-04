@@ -2,121 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monique's Custom Comment Component</title>
+    <title>Comment Component</title>
   </head>
-
   <body>
-    <div id="app"></div>
     <header>
-      <h2>Mo's Commenting System</h2>
+      <h1>
+        <!-- <img class="icon" src="favicon.jpg" /> -->
+        <i class="far fa-comment"></i>
+        Comment Demo (Pub / Sub)
+      </h1>
     </header>
-    <form action="#" method="POST">
-      <img
-        src="https://cdn.pixabay.com/photo/2016/11/19/15/32/laptop-1839876_1280.jpg"
-        alt="Mo's Commenting System pic"
-        width="300"
-        height="200"
-      />
-      <!-- Name -->
-      <div>
-        <label for="name">Name (required)</label>
-      </div>
-      <div>
-        <input
-          required
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Bookie Boo"
-          maxlength="50"
-          tabindex="1"
-        />
-      </div>
 
-      <!-- Email -->
-      <div>
-        <label for="my_email"> Email (required)</label>
-        <div>
-          <input
-            required
-            id="my_email"
-            name="my_email"
-            type="email"
-            spellcheck="false"
-            placeholder="BookieBoo2@shemail.com"
-            maxlength="255"
-            tabindex="2"
-          />
-        </div>
-      </div>
+    <main>
+      
+        <section class="form-container">
+            <!-- 
+                the form component is going to inject 
+                the form right here
+            -->
+        </section>
 
-      <!-- Large Text Area -->
-      <div>
-        <label for="message"> Comment (required) </label>
-        <div>
-          <textarea
-            id="message"
-            name="message"
-            spellcheck="true"
-            rows="10"
-            cols="50"
-            tabindex="3"
-            required
-          ></textarea>
-        </div>
-      </div>
-      <div>
-        <fieldset>
-          <legend>Check if you agree to have your comment posted!</legend>
-          <div>
-            <input
-              type="checkbox"
-              required
-              id="yes"
-              name="interest"
-              value="yes"
-            />
-            <label for="yes">Yes</label>
-          </div>
-        </fieldset>
-      </div>
-      <input type="Submit" value="Submit" />
-    </form>
-    <section id="comments">
-      <custom-comment
-        name="Love"
-        email="youareloved@figureitout.com"
-        comment="You Are Forgiven!"
-        timestamp="3/7/2020"
-      ></custom-comment>
+      <section class="comments"> </section>
+    
+    
+    
+    </main>
 
-      <custom-comment
-        name="Yours"
-        email="oneshotonly@figureitout.com"
-        comment="You Are Valuable!"
-        timestamp="3/7/2020"
-      ></custom-comment>
-
-      <custom-comment
-        name="Mine"
-        email="beyoubooonly@figureitout.com"
-        comment="You Are Accepted!"
-        timestamp="3/7/2020"
-      ></custom-comment>
-  
-    <!-- Browser goes into the tag define by comment.js reads script and puts -->
-    <custom-comment
-      name="Ours"
-      email="winnersonly@figureitout.com"
-      comment="You Are Capable!"
-      timestamp="3/7/2020"
-    ></custom-comment>
-  </section>
-    <!-- browser scans opens comment.js goes to the bottom and gets cc.define and creates by going to cc tag and builds HTML rep -->
-    <script type="module" src="/comment.js"></script>
-    <!--link custom comment to what comment.js which controls what the tag does-->
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/js/comment.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>
