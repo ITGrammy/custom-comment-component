@@ -21,8 +21,14 @@ const addComment = (ev) => {
   const currentYear = currentDate.getFullYear();
 
   const dateString =
-    currentMonth + 1 + "-" + currentDayOfMonth + "-" + currentYear;
-  +"-" + time;
+    currentMonth +
+    1 +
+    "-" +
+    currentDayOfMonth +
+    "-" +
+    currentYear +
+    "  " +
+    time;
 
   //CSSCounterStyleRule;
 
@@ -40,10 +46,15 @@ const addComment = (ev) => {
   timestamp="${dateString}"
 
 ></custom-comment>`;
-  
+
   document
     .querySelector("#comments")
     .insertAdjacentHTML("afterbegin", template);
+  document.querySelector("#name").value = "";
+  document.querySelector("#my_email").value = "";
+  document.querySelector("#message").value = "";
+  document.querySelector("#yes").checked = false;
+  //grab what user typed and set it to empty
 };
 
 document.querySelector("form").addEventListener("submit", addComment);
