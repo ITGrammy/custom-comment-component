@@ -124,6 +124,12 @@ export default class Form {
     };
     console.log(commentObject);
 
+    document.querySelector('#name').value = "";
+        document.querySelector('#my_email').value = "";
+        document.querySelector('#message').value = "";
+        document.querySelector('#yes').checked = false;
+
+
     // tell the state manager that we have
     // a new comment to add:
     this.stateManager.addComment(commentObject);

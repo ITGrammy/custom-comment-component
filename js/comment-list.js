@@ -6,21 +6,29 @@ The job of the comment list is to:
 */
 
 export default class CommentList {
-    constructor(comments) {
-        // when a new instance of CommentList is created,
-        // it needs to know what comments it should draw.
-        // it should draw those comments.
-        console.log(comments);
+  constructor(comments) {
+    this.redraw(comments);
+    //when I initialize comments I want it to invoke and redraw my comments
+  }
+  redraw(comments) {
+    //the "redraw" method will clear out the comments and
+    //redraw with new comments.
+    document.querySelector(".comments").innerHTML = "";
+    
+    // when a new instance of CommentList is created,
+    // it needs to know what comments it should draw.
+    // it should draw those comments.
+    console.log(comments);
 
-        for (let i = 0; i < comments.length; i++) {
-            // Person named first:
-            let name = comments[i].name;
-            let email = comments[i].email;
-            let comment = comments[i].comment;
-            let timestamp = comments[i].timestamp;
+    for (let i = 0; i < comments.length; i++) {
+      // Person named first:
+      let name = comments[i].name;
+      let email = comments[i].email;
+      let comment = comments[i].comment;
+      let timestamp = comments[i].timestamp;
 
-            // creating an HTML representation of it
-            let template = `
+      // creating an HTML representation of it
+      let template = `
                 <custom-comment 
                     name="${name}" 
                     email="${email}" 
@@ -29,12 +37,13 @@ export default class CommentList {
                 </custom-comment>
             `;
 
-            // we need to append it to the DOM
-            document.querySelector('.comments').insertAdjacentHTML(
-                'afterbegin', template
-            );
-        }
-
-        
+      // we need to append it to the DOM
+      document
+        .querySelector(".comments")
+        .insertAdjacentHTML("afterbegin", template);
     }
+  }
+  greeting(){
+    console.log("hello world");
+  }
 }
