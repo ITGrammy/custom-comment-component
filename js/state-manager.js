@@ -18,21 +18,21 @@ export default class StateManager {
         // comments using indexDB.
         this.comments = [
             {
-                name: "Julius",
-                email: "julius@gmail.com",
-                comment: "Here is my comment!",
+                name: "John",
+                email: "Johnnyboy@gmail.com",
+                comment: "I commented!",
                 timestamp: "7/29/2022 3:15:13PM"
             },
             {
-                name: "Adwaina",
-                email: "adwaina@gmail.com",
-                comment: "text text text text text text text text text text ",
+                name: "Nina",
+                email: "NinaNiiina@gmail.com",
+                comment: "I need me to be me ",
                 timestamp: "8/3/2022 3:15:13PM"
             },
             {
-                name: "Monique",
-                email: "mo@gmail.com",
-                comment: "text text text text text text text text text text ",
+                name: "MoniqueNiqui",
+                email: "momoni@gmail.com",
+                comment: "I am wealthy, healthy and strong! ",
                 timestamp: "8/4/2022 3:15:13PM"
             }
         ]
