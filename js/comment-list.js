@@ -13,7 +13,7 @@ export default class CommentList {
         console.log(comments);
 
         for (let i = 0; i < comments.length; i++) {
-            // Julius first:
+            // Person named first:
             let name = comments[i].name;
             let email = comments[i].email;
             let comment = comments[i].comment;
