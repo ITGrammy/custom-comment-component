@@ -1,9 +1,12 @@
 /*
 
 Form component:
-1. Draws the form.
-2. Listens for the form submit
-3. It creates a new comment object:
+1. Draws the form/template(elements) &inserts that  form in the DOM.
+2. Listens for the form submit 
+//to update or notifies the state manager when a user 
+//fills in required info and clicks the button
+3. It creates/builds a new comment object 
+
 
    {
         name: __________,
@@ -12,7 +15,7 @@ Form component:
         timestamp: new Date()
    }
 
-    and sends it to the state manager.
+    and sends comment to the state manager.
 4. It clears out the form
 
 */
@@ -101,10 +104,13 @@ export default class Form {
         `;
 
     document.querySelector(".form-container").innerHTML = formTemplate;
-
+//appends to the DOM says go find the "form container"
     document
       .querySelector("form")
       .addEventListener("submit", this.addComment.bind(this));
+      //adds event listener when user clicks submit add comment 
+
+      //trigger addComment object
   }
 
   addComment(ev) {

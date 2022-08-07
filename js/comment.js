@@ -6,7 +6,7 @@ export default class Comment extends HTMLElement {
     super();
   }
   //Method builds HTML for the component
-  // This a class we are overring the ccb method with my own HTML code
+  // This a class we are overriding the ccb method with my own HTML code
   connectedCallback() {
     //below is the section for the component
     const shadow = this.attachShadow({ mode: "open" });

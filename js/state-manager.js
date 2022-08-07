@@ -40,7 +40,8 @@ export default class StateManager {
 
     // 2. we need a way to update the comments list
     addComment(newComment){
-        this.comments.push(newComment);
+        this.comments.push(newComment); 
+        //push method of an array appends item to the bottom
         console.log(this.comments);
     }
 

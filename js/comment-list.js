@@ -7,6 +7,9 @@ The job of the comment list is to:
 
 export default class CommentList {
   constructor(comments) {
+    //when a new instance of CommentList is created,
+    //it needs to know what comments it should draw
+    //it should draw those comments
     this.redraw(comments);
     //when I initialize comments I want it to invoke and redraw my comments
   }
@@ -15,12 +18,11 @@ export default class CommentList {
     //redraw with new comments.
     document.querySelector(".comments").innerHTML = "";
     
-    // when a new instance of CommentList is created,
-    // it needs to know what comments it should draw.
-    // it should draw those comments.
+    
     console.log(comments);
 
     for (let i = 0; i < comments.length; i++) {
+        //Here it loops through and creates a new comment
       // Person named first:
       let name = comments[i].name;
       let email = comments[i].email;
