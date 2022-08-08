@@ -6,12 +6,14 @@ The job of the comment list is to:
 */
 
 export default class CommentList {
-  constructor(comments) {
+  constructor(stateManager) {
+    stateManager.subscribe("add-comment", this.redraw.bind(this));
+    this.redraw(stateManager.comments);
     //when a new instance of CommentList is created,
     //it needs to know what comments it should draw
     //it should draw those comments
-    this.redraw(comments);
-    //when I initialize comments I want it to invoke and redraw my comments
+
+  //when I initialize comments I want it to invoke and redraw my comments
   }
   redraw(comments) {
     //the "redraw" method will clear out the comments and
@@ -37,6 +39,7 @@ export default class CommentList {
                     comment="${comment}"
                     timestamp="${timestamp}">
                 </custom-comment>
+
             `;
 
       // we need to append it to the DOM

@@ -13,5 +13,5 @@ Goal:
 */
 
 const stateManager = new StateManager();
-const commentList = new CommentList(stateManager.comments);
+const commentList = new CommentList(stateManager);
 const form = new Form(stateManager);
