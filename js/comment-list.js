@@ -8,10 +8,15 @@ The job of the comment list is to:
 export default class CommentList {
   constructor(stateManager) {
     stateManager.subscribe("add-comment", this.redraw.bind(this));
-    this.redraw(stateManager.comments);
+    stateManager.subscribe("comments-loaded", this.redraw.bind(this));
+    //this.redraw(stateManager.comments);
     //when a new instance of CommentList is created,
     //it needs to know what comments it should draw
     //it should draw those comments
+
+    //Added IndexDB Asynch request
+    //Two events, comment added and comment loaded
+    //When comments loaded we will redraw
 
   //when I initialize comments I want it to invoke and redraw my comments
   }
