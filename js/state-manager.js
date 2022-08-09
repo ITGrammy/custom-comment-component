@@ -41,6 +41,7 @@ export default class StateManager {
   }
 
   // 2. we need a way to update the comments list
+  //The form invoked the stateManager's add comment function
   addComment(newComment) {
     this.comments.push(newComment);
     //push method of an array appends item to the bottom
