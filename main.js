@@ -1,7 +1,9 @@
-import './style.css'
+import "./style.css"
 
-//main js imports the style.css and incorporates the title
-document.querySelector('#app').innerHTML = `
-  <h1>Monique's Custom Comment Component!</h1>
- 
-`
+
+
+import Form from "./js/form-component"
+import stateManager from "./js/state-manager"
+// const form = new Form(stateManager)
+import Favorite from "./js/favorite-component"
+const favorite = new Favorite();
