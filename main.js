@@ -23,6 +23,13 @@ offlineFallback();
 import {setCatchHandler, setDefaultHandler} from 'workbox-routing';
 import {NetworkOnly} from 'workbox-strategies';
 
+import { registerSW } from 'virtual:pwa-register'
+
+const updateSW = registerSW({
+  onNeedRefresh() {},
+  onOfflineReady() {},
+})
+
 const pageFallback = 'offline.html';
 const imageFallback = false;
 const fontFallback = false;
