@@ -5,9 +5,7 @@ module.exports = {
     "index.html",
     "js/animation.js",
     "images/home/*.jpg",
-    "images/icon/*.svg",
-    "pages/offline.html",
-    "pages/404.html"
+    "images/icon/*.svg"
   ],
   "swSrc": "src/sw.js",
   "swDest": "build/sw.js",
