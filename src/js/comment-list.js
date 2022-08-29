@@ -7,7 +7,7 @@ The job of the comment list is to:
 
 export default class CommentList {
   constructor(stateManager) {
-    stateManager.subscribe("add-comment", this.redraw.bind(this));
+    stateManager.subscribe("comment-added", this.redraw.bind(this));
     stateManager.subscribe("comments-loaded", this.redraw.bind(this));
     //this.redraw(stateManager.comments);
     //when a new instance of CommentList is created,

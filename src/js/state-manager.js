@@ -38,6 +38,7 @@ export default class StateManager {
     //   },
     // ];
     //mailing list
+    this.comments=[];
     this.subscribers = [];
     this.loadDatabase();
   }
@@ -82,6 +83,7 @@ export default class StateManager {
     //push method of an array appends item to the bottom
     console.log(this.comments);
     this.notify("comment-added", this.comments);
+    
   }
 
   // 3. We need a way to tell the other components to redraw
