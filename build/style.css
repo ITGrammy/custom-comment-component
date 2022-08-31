@@ -1,0 +1,25 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+  background-color: blueviolet;
+}
+
+
+
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+input:valid {
+  background-color: ivory;
+  border: none;
+  outline: 2px solid deepskyblue;
+  border-radius: 5px;
+  accent-color: gold;
+
+}

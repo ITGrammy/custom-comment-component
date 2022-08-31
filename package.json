@@ -3,12 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite serve src",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "copyfiles -u 1 src/**/**/* src/**/* src/* build",
+    "build": "npm run copy && workbox injectManifest workbox-config.js",
+    "start": "node server.js"
   },
   "devDependencies": {
     "vite": "^2.9.9",
     "vite-plugin-pwa": "^0.12.3"
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "express": "^4.18.1"
   }
 }

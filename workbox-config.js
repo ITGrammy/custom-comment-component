@@ -4,5 +4,5 @@ module.exports = {
     "**/*.{jpg,svg,html,js,css,json}"
   ],
   "swDest": "project\\sw.js",
-  "swSrc": "project/src/sw.js"
+  "swSrc": "project\\sw.js"
 };
