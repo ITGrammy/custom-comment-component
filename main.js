@@ -6,6 +6,13 @@ import CommentList from './comment-list.js'
 import Form from './form-component';
 import Counter from './counter.js';
 
+import { registerSW } from 'virtual:pwa-register'
+
+const updateSW = registerSW({
+  onNeedRefresh() {},
+  onOfflineReady() {},
+})
+
 /*
 Goal:
 1. Create a new instance of the state manager

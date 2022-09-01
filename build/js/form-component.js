@@ -103,6 +103,7 @@ export default class Form {
 
         `;
 
+        
     document.querySelector(".form-container").innerHTML = formTemplate;
 //appends to the DOM says go find the "form container"
     document

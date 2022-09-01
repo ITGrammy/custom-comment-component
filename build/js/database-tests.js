@@ -9,6 +9,27 @@ a container to put all of our comments in.
 
 */
 
+let coreAssets = [
+    '/css/main.css',
+    '/js/main.js',
+    '/img/logo.svg',
+    '/img/favicon.ico'
+  ];
+  
+  // On install, cache some stuff
+  self.addEventListener('install', function (event) {
+  
+    // Cache core assets
+    event.waitUntil(caches.open('app').then(function (cache) {
+      for (let asset of coreAssets) {
+        cache.add(new Request(asset));
+      }
+      return cache;
+    }));
+  
+
+
+
 let db;
 
 var openRequest = indexedDB.open('monique_app_db', 2);
