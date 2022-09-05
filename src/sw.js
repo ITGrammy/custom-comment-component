@@ -13,7 +13,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js');
+importScripts(
+  "https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js"
+);
 
 import {
   pageCache,
@@ -21,38 +23,34 @@ import {
   staticResourceCache,
   googleFontsCache,
   offlineFallback,
-} from 'workbox-recipes';
+} from "workbox-recipes";
 
 if (workbox) {
   console.log(`Yay! Workbox is loaded 🎉`);
 
-  workbox.precaching.precacheAndRoute([
-    '**/*.html'
-]);
+  workbox.precaching.precacheAndRoute(["**/*.html"]);
 
+  pageCache();
 
+  googleFontsCache();
 
-pageCache();
+  staticResourceCache();
 
-googleFontsCache();
+  imageCache();
 
-staticResourceCache();
-
-imageCache();
-
-offlineFallback();
+  offlineFallback();
 
   workbox.routing.registerRoute(
-    "https://cdn.pixabay.com/photo/2016/11/19/15/32/laptop-1839876_1280.jpg"/
-    workbox.strategies.cacheFirst({
-      cacheName: 'images-cache',
-      plugins: [
-        new workbox.expiration.Plugin({
-          maxEntries: 50,
-          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-        })
-      ]
-    })
+    "https://cdn.pixabay.com/photo/2016/11/19/15/32/laptop-1839876_1280.jpg" /
+      workbox.strategies.cacheFirst({
+        cacheName: "images-cache",
+        plugins: [
+          new workbox.expiration.Plugin({
+            maxEntries: 50,
+            maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+          }),
+        ],
+      })
   );
   // const articleHandler = workbox.strategies.networkFirst({
   //   cacheName: 'articles-cache',
@@ -62,13 +60,13 @@ offlineFallback();
   //     })
   //   ]
   // });
-  
-  workbox.routing.registerRoute(/(.*)\.html/, args => {
-    return articleHandler.handle(args).then(response => {
+
+  workbox.routing.registerRoute(/(.*)\.html/, (args) => {
+    return articleHandler.handle(args).then((response) => {
       if (!response) {
-        return caches.match('build/offline.html');
+        return caches.match("build/offline.html");
       } else if (response.status === 404) {
-        return caches.match('build/404.html');
+        return caches.match("build/404.html");
       }
       return response;
     });
@@ -76,7 +74,7 @@ offlineFallback();
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }
- 
+
 // // This code executes in its own worker or thread
 // self.addEventListener("install", event => {
 //   console.log("Service worker installed");

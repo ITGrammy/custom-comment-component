@@ -8,8 +8,6 @@
   background-color: blueviolet;
 }
 
-
-
 label {
   display: block;
   margin-top: 1em;
@@ -21,5 +19,4 @@ input:valid {
   outline: 2px solid deepskyblue;
   border-radius: 5px;
   accent-color: gold;
-
 }

@@ -104,13 +104,13 @@ export default class Form {
         `;
 
     document.querySelector(".form-container").innerHTML = formTemplate;
-//appends to the DOM says go find the "form container"
+    //appends to the DOM says go find the "form container"
     document
       .querySelector("form")
       .addEventListener("submit", this.addComment.bind(this));
-      //adds event listener when user clicks submit add comment 
+    //adds event listener when user clicks submit add comment
 
-      //trigger addComment object
+    //trigger addComment object
   }
 
   addComment(ev) {
@@ -130,19 +130,17 @@ export default class Form {
     };
     console.log(commentObject);
 
-    document.querySelector('#name').value = "";
-        document.querySelector('#my_email').value = "";
-        document.querySelector('#message').value = "";
-        document.querySelector('#yes').checked = false;
-
+    document.querySelector("#name").value = "";
+    document.querySelector("#my_email").value = "";
+    document.querySelector("#message").value = "";
+    document.querySelector("#yes").checked = false;
 
     // tell the state manager that we have
     // a new comment to add:
     this.stateManager.addComment(commentObject);
 
     // Your Job: how do you clear out your form!!
-    
+
     //grab what user typed and set it to empty
   }
-  
 }

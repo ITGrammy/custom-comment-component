@@ -38,7 +38,7 @@ export default class StateManager {
     //   },
     // ];
     //mailing list
-    this.comments=[];
+    this.comments = [];
     this.subscribers = [];
     this.loadDatabase();
   }
@@ -67,13 +67,13 @@ export default class StateManager {
 
     // 2. This function fires when the database has been opened.
     // This is where we will add new comments to the datastore:
-    openRequest.onsuccess = (function (e) {
+    openRequest.onsuccess = function (e) {
       console.log("running onsuccess");
       db = e.target.result;
       // call this function to create a new comment:
-      
+
       this.readCommentsFromDataStore(db);
-    }).bind(this);
+    }.bind(this);
   }
 
   // 2. we need a way to update the comments list
@@ -83,7 +83,6 @@ export default class StateManager {
     //push method of an array appends item to the bottom
     console.log(this.comments);
     this.notify("comment-added", this.comments);
-    
   }
 
   // 3. We need a way to tell the other components to redraw

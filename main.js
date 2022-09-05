@@ -1,17 +1,17 @@
 import "./style.css";
 
-import './comment.js'
-import StateManager from './state-manager.js'
-import CommentList from './comment-list.js'
-import Form from './form-component';
-import Counter from './counter.js';
+import "./comment.js";
+import StateManager from "./state-manager.js";
+import CommentList from "./comment-list.js";
+import Form from "./form-component";
+import Counter from "./counter.js";
 
-import { registerSW } from 'virtual:pwa-register'
+import { registerSW } from "virtual:pwa-register";
 
 const updateSW = registerSW({
   onNeedRefresh() {},
   onOfflineReady() {},
-})
+});
 
 /*
 Goal:
@@ -43,7 +43,7 @@ const addComment = (ev) => {
   const time = currentDate.toLocaleTimeString();
 
   const currentDayOfMonth = currentDate.getDate();
-  const currentMonth = currentDate.getMonth(); 
+  const currentMonth = currentDate.getMonth();
   // Be careful! January is 0, not 1
   const currentYear = currentDate.getFullYear();
 

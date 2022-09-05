@@ -18,18 +18,17 @@ export default class CommentList {
     //Two events, comment added and comment loaded
     //When comments loaded we will redraw
 
-  //when I initialize comments I want it to invoke and redraw my comments
+    //when I initialize comments I want it to invoke and redraw my comments
   }
   redraw(comments) {
     //the "redraw" method will clear out the comments and
     //redraw with new comments.
     document.querySelector(".comments").innerHTML = "";
-    
-    
+
     console.log(comments);
 
     for (let i = 0; i < comments.length; i++) {
-        //Here it loops through and creates a new comment
+      //Here it loops through and creates a new comment
       // Person named first:
       let name = comments[i].name;
       let email = comments[i].email;
@@ -53,7 +52,7 @@ export default class CommentList {
         .insertAdjacentHTML("afterbegin", template);
     }
   }
-  greeting(){
+  greeting() {
     console.log("hello world");
   }
 }
